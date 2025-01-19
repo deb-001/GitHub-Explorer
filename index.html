@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fab fa-github"></i> GitHub Explorer</h1>
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="owner" 
+                placeholder="Repository owner (e.g., facebook)" 
+            />
+            <input 
+                type="text" 
+                id="repo" 
+                placeholder="Repository name (e.g., react)" 
+            />
+            <button onclick="fetchRepo()">
+                <i class="fas fa-search"></i> Explore
+            </button>
+
+        </div>
+        <p class="instructions">Enter repository owner and name, or click one of the popular repositories below</p>
+        <div class="quick-links">
+            <a href="https://github.com/facebook/react" target="_blank" class="quick-link">
+                <i class="fab fa-react"></i> React
+            </a>
+            <a href="https://github.com/vercel/next.js" target="_blank" class="quick-link">
+                <i class="fab fa-node-js"></i> Next.js
+            </a>
+            <a href="https://github.com/microsoft/vscode" target="_blank" class="quick-link">
+                <i class="fas fa-code"></i> VS Code
+            </a>
+            <a href="https://github.com/tensorflow/tensorflow" target="_blank" class="quick-link">
+                <i class="fas fa-brain"></i> TensorFlow
+            </a>
+            <a href="https://github.com/django/django" target="_blank" class="quick-link">
+                <i class="fab fa-python"></i> Django
+            </a>
+            <a href="https://github.com/flutter/flutter" target="_blank" class="quick-link">
+                <i class="fab fa-android"></i> Flutter
+            </a>
+        </div>
+        </div>
+        <div id="error-message"></div>
+        <div id="repo-content" class="repo-content" style="display: none;">
+            <div class="sidebar">
+                <div id="repo-info"></div>
+                <div id="file-explorer" class="file-explorer"></div>
+            </div>
+            <div class="main-content">
+                <div id="breadcrumb" class="breadcrumb"></div>
+                <div id="content"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
